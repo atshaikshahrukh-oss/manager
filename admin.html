@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050d16">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="app.css">
+  <title>CC Motocrafts | Operations & Marketing Management Desk (Lean 1-Manager Hub)</title>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="index.html">
+      <img src="cc-logo-3d.png" onerror="this.onerror=null;this.src='icon-192.png'" alt="CC Motocrafts Logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--cyan)">
+      <div>CC MOTOCRAFTS<small>OPERATIONS & MARKETING MANAGEMENT DESK</small></div>
+    </a>
+    <nav id="nav" class="nav"></nav>
+    <span class="pill gold">1-MANAGER LEAN CONTROL HUB</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="switcher" class="switcher"></div>
+
+  <div class="brand-ribbon">
+    <span class="brand-chip ktm">🏍️ 2W: 100cc Commuters → 2500cc Superbikes</span>
+    <span class="brand-chip ducati">🔥 Ducati · Triumph 2500cc · BMW · Benelli · KTM · RE</span>
+    <span class="brand-chip kawasaki">🛵 CVT Tuning · OBD-II · Tappet · Voice-Command Tech</span>
+    <span class="brand-chip bmw">🚘 4W: Cars · Luxury SUVs · Heavy Fleet</span>
+    <span class="brand-chip triumph">❄️ AC Overhaul · 3D Alignment · Auto Gearbox</span>
+    <span class="brand-chip fleet">🚛 Hydraulic Flatbed Ramp · Urban Home & Parking</span>
+  </div>
+
+
+  <!-- Master Passcode Verification Bar -->
+  <section class="card full" style="margin-top:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div>
+        <span class="eyebrow">MASTER SECURITY PROTOCOL (CC 1005) · SUBORDINATE TO SUPREME OWNER</span>
+        <h2 style="margin:4px 0">Operations & Marketing Manager Desk (Controls 2W + 4W Dispatch)</h2>
+        <p class="muted" style="margin:0">Replaces bloated 50-staff offices: 1 Marketing & Operations Manager dispatches leads and tracking passcodes for both apps, while Supreme Owner retains absolute lock authority.</p>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input id="admin-passcode" type="password" value="" placeholder="Enter Passcode (CC 1005)" style="background:#07121e;color:#fff;border:1px solid var(--cyan);border-radius:10px;padding:10px">
+        <button type="button" class="primary" id="btn-admin-unlock">🔓 Verify Passcode (CC 1005)</button>
+      </div>
+    </div>
+    <div id="admin-lock-msg" style="margin-top:10px"></div>
+  </section>
+
+  <!-- Prominent Supreme Owner Lockout Alert Container -->
+  <div id="supreme-owner-lock-alert" style="display:none;margin:14px 0"></div>
+
+  <div class="grid" id="admin-workspace">
+    <!-- Daily Operations & Pickup Workflow Summary -->
+    <section class="card full" style="background:#071524;border-color:var(--cyan)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+        <div>
+          <span class="eyebrow"><span class="live-dot"></span> REAL-TIME SUPABASE WORKFLOW & PICKUP TRACKER</span>
+          <h2 style="margin:4px 0 0">📊 Daily Operations, VIP Pickup & Bay Status Overview</h2>
+        </div>
+        <span class="pill green" id="admin-supabase-badge">SUPABASE `bike_bookings` SYNC: LIVE</span>
+      </div>
+      <div class="grid" style="margin-bottom:0" id="admin-daily-kpis"></div>
+    </section>
+    <!-- Left: Lead Assignment & Tracking Passcode Dispatch -->
+    <section class="card wide">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+        <h2>📋 Incoming 2W, 4W & Urban Leads — Route to Partner & Send Tracking Passcode</h2>
+        <span class="pill green"><span class="live-dot"></span> Live Dispatch Sync</span>
+      </div>
+      <div id="admin-leads-list" class="list"></div>
+    </section>
+
+    <!-- Right: Marketing Campaign & Anti-Panic Buffer Controls -->
+    <section class="card">
+      <span class="pill gold">MARKETING & BAY BUFFER DESK</span>
+      <h2 style="margin-top:8px">Live Promo & SEC-DEV-412 Buffer</h2>
+      <div class="field" style="margin-bottom:10px">
+        <label>Global Website Live Promo Banner</label>
+        <textarea id="admin-promo-input" style="min-height:68px"></textarea>
+        <button type="button" class="primary" id="btn-save-promo">Update Live Website Banner</button>
+      </div>
+      <div class="item" style="margin-top:12px">
+        <span class="pill gold">PROTOCOL SEC-DEV-412</span>
+        <strong style="margin-top:6px">Anti-Panic 5–10 Min Operational Buffer</strong>
+        <p class="muted" style="margin:4px 0 10px">Pauses customer live camera with "Device Protocol Synchronization / Secure stream handshake in progress..." instead of "Offline".</p>
+        <button type="button" class="gold" id="btn-admin-toggle-buffer" style="width:100%">🛡️ Toggle SEC-DEV-412 Buffer</button>
+      </div>
+
+      <div class="item" style="margin-top:12px;border-color:var(--cyan)">
+        <span class="pill">MULTI-BRAND GARAGE CAMERA CONNECTOR</span>
+        <strong style="margin-top:6px">📹 Connect Any Garage Camera (Hikvision / CP Plus / Dahua / Mi / TP-Link)</strong>
+        <div class="field" style="margin-top:6px">
+          <select id="admin-cam-brand" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:8px;padding:8px">
+            <option value="Hikvision IP Dome (RTSP/WebRTC)">Hikvision IP Dome (2W/4W Bay)</option>
+            <option value="CP Plus Guard+ Cloud Cam">CP Plus Guard+ Cloud Cam</option>
+            <option value="Dahua Smart Workshop NVR">Dahua Smart Workshop NVR</option>
+            <option value="TP-Link Tapo / Xiaomi 360 WiFi Cam">TP-Link Tapo / Xiaomi 360 WiFi Cam</option>
+            <option value="World Universal ONVIF / RTSP Scanner">World Universal ONVIF / RTSP Scanner</option>
+          </select>
+        </div>
+        <div class="field" style="margin-top:6px">
+          <input id="admin-cam-code" placeholder="Camera Code / Scanner ID / Passkey" value="CAM-HYD-BAY01-LIVE">
+        </div>
+        <button type="button" class="primary" id="btn-admin-connect-cam" style="width:100%;margin-top:6px">📡 Connect Garage Camera to Customer Stream</button>
+        <div id="admin-cam-status" class="muted" style="font-size:11.5px;margin-top:6px"></div>
+      </div>
+
+    </section>
+
+    <!-- Partner Directory with Restricted Supreme Owner Actions -->
+    <section class="card full">
+      <h2>🏢 Partner Garage Directory & Role-Based Restriction Enforcement</h2>
+      <p class="muted">Staff can view approved garages for lead routing, but <strong>cannot delete partner profiles, override owner blocks, or approve unverified garages</strong>. Click any restricted button below to verify the <code>🔒 LOCKED BY SUPREME OWNER</code> security enforcement.</p>
+      <div id="admin-partners-list" class="grid" style="margin-bottom:0"></div>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">CC Motocrafts Operations & Marketing Desk · Subordinate to Supreme Owner Command (owner.html) · Master Passcode: Authorized Passcode</div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+function triggerSupremeOwnerLock(attemptedAction) {
+  const st = loadState();
+  st.auditLogs.unshift({
+    time: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) + ' IST',
+    actor: 'ADMIN-DESK (BLOCKED)',
+    action: `🔒 LOCKED BY SUPREME OWNER: Attempted unauthorized action [${attemptedAction}]`
+  });
+  saveState(st);
+
+  const box = document.getElementById('supreme-owner-lock-alert');
+  box.style.display = 'block';
+  box.innerHTML = `
+    <div class="locked-banner">
+      <div>
+        <div style="font-size:17px;color:#ff6b76;letter-spacing:0.04em">🔒 LOCKED BY SUPREME OWNER</div>
+        <div style="font-weight:500;font-size:13.5px;margin-top:4px">
+          Unauthorized Operation Blocked: <strong>"${attemptedAction}"</strong>.<br>
+          Operations & Marketing Managers cannot delete partner profiles, override owner blocks, or bypass Supreme Owner restrictions. Only <strong>owner.html</strong> holds Supreme Command authority.
+        </div>
+      </div>
+      <a class="btn danger" href="owner.html">Open Supreme Owner</a>
+    </div>
+  `;
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function renderAdminDesk() {
+  const st = loadState();
+  const lockMsg = document.getElementById('admin-lock-msg');
+  const ws = document.getElementById('admin-workspace');
+
+  if (!isInternetActive()) {
+    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>INTERNET DEPENDENCY LOCKOUT ACTIVE</strong> — Active internet sync dropped. Administrative controls and live tracking sessions are immediately locked out.</div><span class="pill red">OFFLINE LOCKOUT</span></div>`;
+    ws.style.opacity = '0.35';
+    ws.style.pointerEvents = 'none';
+    return;
+  }
+
+  if (st.adminDeskStatus === 'disabled' || st.adminDeskStatus === 'blocked') {
+    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>OPERATIONS & MARKETING MANAGER DESK (CC 1005) FROZEN BY SUPREME OWNER</strong><br>Your administrative access has been remotely disabled by Shaik Mujahid (Supreme Owner Command). This terminal is 100% locked until manually re-enabled from the Master Owner App.</div><span class="pill red">CC 1005 DISABLED</span></div>`;
+    ws.style.opacity = '0.18';
+    ws.style.pointerEvents = 'none';
+    ws.style.filter = 'blur(4px)';
+    return;
+  }
+
+  const code = document.getElementById('admin-passcode').value.trim();
+  if (verifyAdminKey(code)) {
+    touchSecureSession('admin');
+  }
+
+  if (!isSecureSessionValid('admin')) {
+    lockMsg.innerHTML = `<div class="notice warn">🔒 <strong>Manual Security Gate Active (CC 1005):</strong> Enter your assigned Operations Manager Passcode above to unlock the dispatch desk. (Session auto-destructs after 10 minutes of inactivity).</div>`;
+    ws.style.opacity = '0.25';
+    ws.style.pointerEvents = 'none';
+    ws.style.filter = 'blur(3px)';
+    return;
+  }
+
+  ws.style.opacity = '1';
+  ws.style.pointerEvents = 'auto';
+  ws.style.filter = 'none';
+  lockMsg.innerHTML = `<div class="notice good">✅ <strong>Operations & Marketing Desk (CC 1005) Unlocked · 10-Minute Auto-Destruct Timer Active.</strong> Subordinate role restrictions enforced by Supreme Owner.</div>`;
+
+  document.getElementById('admin-promo-input').value = st.marketingBanner;
+  const bufBtn = document.getElementById('btn-admin-toggle-buffer');
+  bufBtn.textContent = st.secBufferActive
+    ? '🟢 Resume Live Feed (Disable SEC-DEV-412 Buffer)'
+    : '🛡️ Activate SEC-DEV-412 Buffer (5–10 Min Sync Screen)';
+
+
+  const kpiBox = document.getElementById('admin-daily-kpis');
+  if (kpiBox) {
+    const totalB = st.bookings.length;
+    const vipB = st.bookings.filter(x => x.vip_dispatch).length;
+    const inRepair = st.bookings.filter(x => x.stage === 'repair' || x.stage === 'diagnosis').length;
+    const activeVerts = (st.serviceVerticals || []).filter(v => v.active).length;
+    kpiBox.innerHTML = `
+      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill green">TOTAL ACTIVE BOOKINGS</span><div class="stat" style="font-size:22px;margin-top:4px">${totalB}</div><div class="muted">Synced with Supabase</div></div>
+      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill gold">VIP 35–45m PICKUPS</span><div class="stat" style="font-size:22px;margin-top:4px">${vipB}</div><div class="muted">Hydraulic Ramp & Flatbed</div></div>
+      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill">ACTIVE BAY REPAIRS</span><div class="stat" style="font-size:22px;margin-top:4px">${inRepair}</div><div class="muted">Video Quotation Verified</div></div>
+      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill green">LIVE SERVICE VERTICALS</span><div class="stat" style="font-size:22px;margin-top:4px">${activeVerts}</div><div class="muted">2W, 4W & Dynamic Verticals</div></div>
+    `;
+  }
+
+  const approvedPartners = st.partners.filter(p => p.status === 'approved');
+  const leadsBox = document.getElementById('admin-leads-list');
+  leadsBox.innerHTML = st.bookings.map(b => {
+    const links = buildDispatchLinks(b);
+    return `
+      <div class="item">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+          <strong>${b.booking_code} · ${b.customer_name} (${b.phone}) — ${b.brand} ${b.model}</strong>
+          <span class="pill gold">Passcode: ${b.tracking_passcode}</span>
+        </div>
+        <div class="muted">
+          ${b.service_type} · Location: ${b.address} (${b.pincode}) · Status: <strong>${b.stage.toUpperCase()}</strong> · Assigned: <strong>${b.garage_name}</strong>
+        </div>
+        <div class="actions" style="margin-top:10px">
+          <select id="assign-sel-${b.id}" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:10px;padding:8px">
+            ${approvedPartners.map(p => `<option value="${p.id}" ${Number(b.assigned_garage_id) === Number(p.id) ? 'selected' : ''}>Route to: ${p.garage_name}</option>`).join('')}
+          </select>
+          <button type="button" class="primary" data-assign-lead="${b.id}">Assign Partner Garage</button>
+          <a class="btn green" href="${links.waUrl}" target="_blank" rel="noopener">📲 Send Passcode via WhatsApp</a>
+          <button type="button" class="btn" data-pause-cam="${b.id}">${b.camera_paused ? '🟢 Resume Bay Cam' : '🛡️ Pause Bay Cam (SEC-DEV-412)'}</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const pBox = document.getElementById('admin-partners-list');
+  pBox.innerHTML = st.partners.map(p => `
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span class="pill ${p.status === 'approved' ? 'green' : (p.status === 'blocked' ? 'red' : 'gold')}">${p.status.toUpperCase()}</span>
+        <span class="muted" style="font-size:11px">GST: ${p.gst_number}</span>
+      </div>
+      <h3>${p.garage_name}</h3>
+      <p class="muted">${p.owner_name} · ${p.phone}<br>${p.address}</p>
+      <div class="actions">
+        <button type="button" class="locked-btn" data-restricted="Delete Partner Profile (${p.garage_name})">🔒 Delete Partner</button>
+        <button type="button" class="locked-btn" data-restricted="Override Owner Block / Status (${p.garage_name})">🔒 Override Owner Status</button>
+        <button type="button" class="locked-btn" data-restricted="Alter Core Service Pricing / Unlock One-Time Partner Profile (${p.garage_name})">🔒 Alter Core Pricing / Profile</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+window.onCcmStateChange = renderAdminDesk;
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderAdminDesk();
+  document.getElementById('btn-admin-unlock').onclick = renderAdminDesk;
+
+  document.getElementById('btn-save-promo').onclick = () => {
+    const st = loadState();
+    st.marketingBanner = document.getElementById('admin-promo-input').value.trim() || st.marketingBanner;
+    saveState(st);
+    renderAdminDesk();
+  };
+
+  document.getElementById('btn-admin-toggle-buffer').onclick = () => {
+    const st = loadState();
+    if (st.masterKillSwitch) {
+      triggerSupremeOwnerLock('Cannot resume Live Feeds while Supreme Owner Master Kill-Switch is engaged');
+      return;
+    }
+    st.secBufferActive = !st.secBufferActive;
+    saveState(st);
+    renderAdminDesk();
+  };
+  const camConBtn = document.getElementById('btn-admin-connect-cam');
+  if (camConBtn) {
+    camConBtn.onclick = () => {
+      const br = document.getElementById('admin-cam-brand').value;
+      const cd = document.getElementById('admin-cam-code').value;
+      document.getElementById('admin-cam-status').innerHTML = '<span style="color:var(--green)">✅ Connected: ' + br + ' (' + cd + ') synced to active bay!</span>';
+    };
+  }
+
+  document.getElementById('admin-leads-list').addEventListener('click', (e) => {
+    const assignBtn = e.target.closest('[data-assign-lead]');
+    if (assignBtn) {
+      const id = Number(assignBtn.dataset.assignLead);
+      const st = loadState();
+      const job = st.bookings.find(b => Number(b.id) === id);
+      const gid = Number(document.getElementById('assign-sel-' + id).value);
+      const gar = st.partners.find(p => Number(p.id) === gid);
+      if (job && gar) {
+        job.assigned_garage_id = gar.id;
+        job.garage_name = gar.garage_name;
+        saveState(st);
+        renderAdminDesk();
+      }
+    }
+    const camBtn = e.target.closest('[data-pause-cam]');
+    if (camBtn) {
+      const id = Number(camBtn.dataset.pauseCam);
+      const st = loadState();
+      const job = st.bookings.find(b => Number(b.id) === id);
+      if (job) {
+        if (job.lockedByOwner || st.masterKillSwitch) {
+          triggerSupremeOwnerLock('Cannot turn ON Live Video / Tracking for ' + job.booking_code + ' — Locked by Supreme Owner (owner.html)');
+          return;
+        }
+        job.camera_paused = !job.camera_paused;
+        saveState(st);
+        renderAdminDesk();
+      }
+    }
+  });
+
+  document.getElementById('admin-partners-list').addEventListener('click', (e) => {
+    const rBtn = e.target.closest('[data-restricted]');
+    if (rBtn) triggerSupremeOwnerLock(rBtn.dataset.restricted);
+  });
+});
+</script>
+</body>
+</html>

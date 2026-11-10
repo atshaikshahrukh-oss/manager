@@ -1,0 +1,1 @@
+Package 3: Operations & Marketing Manager App (admin.html — Passcode Gate: CC1005 + 10-Min Auto-Lock) — Multi-Brand Camera Connector (Hikvision, CP Plus, Dahua, TP-Link/Mi, Universal ONVIF), Pincode Lead Shifting & Routing, and Strict Subordinate Lock (LOCKED BY SUPREME OWNER).
