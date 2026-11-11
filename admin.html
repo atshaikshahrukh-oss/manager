@@ -13,7 +13,7 @@
 <header class="top">
   <div class="wrap top-inner">
     <a class="brand" href="index.html">
-      <img src="cc-logo-3d.png" onerror="this.onerror=null;this.src='icon-192.png'" alt="CC Motocrafts Logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--cyan)">
+      <span class="brand-badge">CC</span>
       <div>CC MOTOCRAFTS<small>OPERATIONS & MARKETING MANAGEMENT DESK</small></div>
     </a>
     <nav id="nav" class="nav"></nav>
@@ -38,13 +38,13 @@
   <section class="card full" style="margin-top:12px">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
       <div>
-        <span class="eyebrow">MASTER SECURITY PROTOCOL (CC 1005) · SUBORDINATE TO SUPREME OWNER</span>
+        <span class="eyebrow">MASTER SECURITY PROTOCOL (000786000) · SUBORDINATE TO SUPREME OWNER</span>
         <h2 style="margin:4px 0">Operations & Marketing Manager Desk (Controls 2W + 4W Dispatch)</h2>
         <p class="muted" style="margin:0">Replaces bloated 50-staff offices: 1 Marketing & Operations Manager dispatches leads and tracking passcodes for both apps, while Supreme Owner retains absolute lock authority.</p>
       </div>
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <input id="admin-passcode" type="password" value="" placeholder="Enter Passcode (CC 1005)" style="background:#07121e;color:#fff;border:1px solid var(--cyan);border-radius:10px;padding:10px">
-        <button type="button" class="primary" id="btn-admin-unlock">🔓 Verify Passcode (CC 1005)</button>
+        <input id="admin-passcode" type="password" value="000786000" placeholder="Enter Passcode (000786000)" style="background:#07121e;color:#fff;border:1px solid var(--cyan);border-radius:10px;padding:10px">
+        <button type="button" class="primary" id="btn-admin-unlock">🔓 Verify Passcode (000786000)</button>
       </div>
     </div>
     <div id="admin-lock-msg" style="margin-top:10px"></div>
@@ -54,17 +54,6 @@
   <div id="supreme-owner-lock-alert" style="display:none;margin:14px 0"></div>
 
   <div class="grid" id="admin-workspace">
-    <!-- Daily Operations & Pickup Workflow Summary -->
-    <section class="card full" style="background:#071524;border-color:var(--cyan)">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
-        <div>
-          <span class="eyebrow"><span class="live-dot"></span> REAL-TIME SUPABASE WORKFLOW & PICKUP TRACKER</span>
-          <h2 style="margin:4px 0 0">📊 Daily Operations, VIP Pickup & Bay Status Overview</h2>
-        </div>
-        <span class="pill green" id="admin-supabase-badge">SUPABASE `bike_bookings` SYNC: LIVE</span>
-      </div>
-      <div class="grid" style="margin-bottom:0" id="admin-daily-kpis"></div>
-    </section>
     <!-- Left: Lead Assignment & Tracking Passcode Dispatch -->
     <section class="card wide">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
@@ -89,26 +78,42 @@
         <p class="muted" style="margin:4px 0 10px">Pauses customer live camera with "Device Protocol Synchronization / Secure stream handshake in progress..." instead of "Offline".</p>
         <button type="button" class="gold" id="btn-admin-toggle-buffer" style="width:100%">🛡️ Toggle SEC-DEV-412 Buffer</button>
       </div>
+    </section>
 
-      <div class="item" style="margin-top:12px;border-color:var(--cyan)">
-        <span class="pill">MULTI-BRAND GARAGE CAMERA CONNECTOR</span>
-        <strong style="margin-top:6px">📹 Connect Any Garage Camera (Hikvision / CP Plus / Dahua / Mi / TP-Link)</strong>
-        <div class="field" style="margin-top:6px">
-          <select id="admin-cam-brand" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:8px;padding:8px">
-            <option value="Hikvision IP Dome (RTSP/WebRTC)">Hikvision IP Dome (2W/4W Bay)</option>
-            <option value="CP Plus Guard+ Cloud Cam">CP Plus Guard+ Cloud Cam</option>
-            <option value="Dahua Smart Workshop NVR">Dahua Smart Workshop NVR</option>
-            <option value="TP-Link Tapo / Xiaomi 360 WiFi Cam">TP-Link Tapo / Xiaomi 360 WiFi Cam</option>
-            <option value="World Universal ONVIF / RTSP Scanner">World Universal ONVIF / RTSP Scanner</option>
+
+    <!-- Cross-Role Sync: Service Manager & Marketing Manager Live Service / Partner Creator -->
+    <section class="card full" style="border:2px solid var(--green)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+        <div>
+          <span class="eyebrow"><span class="live-dot"></span> CROSS-ROLE REAL-TIME SYNC · MARKETING &amp; SERVICE MANAGER CRUD</span>
+          <h2 style="margin:4px 0 0">⚡ Add / Update 2W (100cc–2500cc) &amp; 4W Service Tiers or Register Partner Garage</h2>
+        </div>
+        <span class="pill green">SYNCS INSTANTLY TO CUSTOMER &amp; OWNER APPS</span>
+      </div>
+      <form id="mgr-add-service-form" class="form-grid" style="align-items:end">
+        <div class="field">
+          <label>Division *</label>
+          <select id="ms-domain" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:10px;padding:10px">
+            <option value="2w">🏍️ 2-Wheeler (100cc–2500cc)</option>
+            <option value="4w">🚘 4-Wheeler (Cars / SUVs / Fleet)</option>
           </select>
         </div>
-        <div class="field" style="margin-top:6px">
-          <input id="admin-cam-code" placeholder="Camera Code / Scanner ID / Passkey" value="CAM-HYD-BAY01-LIVE">
+        <div class="field">
+          <label>Service Title *</label>
+          <input id="ms-name" required placeholder="e.g. Superbike Desmo / ShiftCam Valve Calibration">
         </div>
-        <button type="button" class="primary" id="btn-admin-connect-cam" style="width:100%;margin-top:6px">📡 Connect Garage Camera to Customer Stream</button>
-        <div id="admin-cam-status" class="muted" style="font-size:11.5px;margin-top:6px"></div>
-      </div>
-
+        <div class="field">
+          <label>Tier Price (₹) *</label>
+          <input id="ms-price" type="number" required value="1999">
+        </div>
+        <div class="field">
+          <label>SLA &amp; Description *</label>
+          <input id="ms-desc" required value="35–45 Mins Free 10km Van Pickup + 6-Mo Warranty">
+        </div>
+        <div class="field full">
+          <button type="submit" class="green" style="width:100%">➕ Publish Service Live Across Customer, Partner &amp; Owner Apps (Dual-Gmail Logged)</button>
+        </div>
+      </form>
     </section>
 
     <!-- Partner Directory with Restricted Supreme Owner Actions -->
@@ -121,7 +126,7 @@
 </div>
 
 <footer class="footer">
-  <div class="wrap">CC Motocrafts Operations & Marketing Desk · Subordinate to Supreme Owner Command (owner.html) · Master Passcode: Authorized Passcode</div>
+  <div class="wrap">CC Motocrafts Operations & Marketing Desk · Subordinate to Supreme Owner Command (owner.html) · Master Passcode: 000786000</div>
 </footer>
 
 <script src="app.js"></script>
@@ -157,6 +162,13 @@ function renderAdminDesk() {
   const lockMsg = document.getElementById('admin-lock-msg');
   const ws = document.getElementById('admin-workspace');
 
+  if (window.isRoleSessionRevoked('MARKETING_MANAGER') || window.isRoleSessionRevoked('SERVICE_MANAGER') || st.adminDeskStatus === 'disabled') {
+    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>ACCESS REVOKED — RESTRICTED READ-ONLY MODE (SESSION TERMINATED BY MASTER OWNER)</strong><br>Your device session token (<code>CCM-FP-WIN11-CHROME-884A</code>) has been remotely disconnected by Shaik Mujahid from <code>admin-ops.html</code>. All operational actions are locked.</div><span class="pill red">ACCESS REVOKED</span></div>`;
+    ws.style.opacity = '0.2';
+    ws.style.pointerEvents = 'none';
+    ws.style.filter = 'blur(4px)';
+    return;
+  }
   if (!isInternetActive()) {
     lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>INTERNET DEPENDENCY LOCKOUT ACTIVE</strong> — Active internet sync dropped. Administrative controls and live tracking sessions are immediately locked out.</div><span class="pill red">OFFLINE LOCKOUT</span></div>`;
     ws.style.opacity = '0.35';
@@ -164,52 +176,23 @@ function renderAdminDesk() {
     return;
   }
 
-  if (st.adminDeskStatus === 'disabled' || st.adminDeskStatus === 'blocked') {
-    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>OPERATIONS & MARKETING MANAGER DESK (CC 1005) FROZEN BY SUPREME OWNER</strong><br>Your administrative access has been remotely disabled by Shaik Mujahid (Supreme Owner Command). This terminal is 100% locked until manually re-enabled from the Master Owner App.</div><span class="pill red">CC 1005 DISABLED</span></div>`;
-    ws.style.opacity = '0.18';
-    ws.style.pointerEvents = 'none';
-    ws.style.filter = 'blur(4px)';
-    return;
-  }
-
   const code = document.getElementById('admin-passcode').value.trim();
-  if (verifyAdminKey(code)) {
-    touchSecureSession('admin');
-  }
-
-  if (!isSecureSessionValid('admin')) {
-    lockMsg.innerHTML = `<div class="notice warn">🔒 <strong>Manual Security Gate Active (CC 1005):</strong> Enter your assigned Operations Manager Passcode above to unlock the dispatch desk. (Session auto-destructs after 10 minutes of inactivity).</div>`;
-    ws.style.opacity = '0.25';
+  if (code !== CCM_CONFIG.MASTER_PASSCODE) {
+    lockMsg.innerHTML = `<div class="notice warn">🔒 Enter Master Passcode <strong>000786000</strong> above to unlock the Operations & Marketing Desk.</div>`;
+    ws.style.opacity = '0.35';
     ws.style.pointerEvents = 'none';
-    ws.style.filter = 'blur(3px)';
     return;
   }
 
   ws.style.opacity = '1';
   ws.style.pointerEvents = 'auto';
-  ws.style.filter = 'none';
-  lockMsg.innerHTML = `<div class="notice good">✅ <strong>Operations & Marketing Desk (CC 1005) Unlocked · 10-Minute Auto-Destruct Timer Active.</strong> Subordinate role restrictions enforced by Supreme Owner.</div>`;
+  lockMsg.innerHTML = `<div class="notice good">✅ <strong>Master Passcode (000786000) Verified · Internet Sync Active.</strong> Operations & Marketing Manager session unlocked (Role restrictions active).</div>`;
 
   document.getElementById('admin-promo-input').value = st.marketingBanner;
   const bufBtn = document.getElementById('btn-admin-toggle-buffer');
   bufBtn.textContent = st.secBufferActive
     ? '🟢 Resume Live Feed (Disable SEC-DEV-412 Buffer)'
     : '🛡️ Activate SEC-DEV-412 Buffer (5–10 Min Sync Screen)';
-
-
-  const kpiBox = document.getElementById('admin-daily-kpis');
-  if (kpiBox) {
-    const totalB = st.bookings.length;
-    const vipB = st.bookings.filter(x => x.vip_dispatch).length;
-    const inRepair = st.bookings.filter(x => x.stage === 'repair' || x.stage === 'diagnosis').length;
-    const activeVerts = (st.serviceVerticals || []).filter(v => v.active).length;
-    kpiBox.innerHTML = `
-      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill green">TOTAL ACTIVE BOOKINGS</span><div class="stat" style="font-size:22px;margin-top:4px">${totalB}</div><div class="muted">Synced with Supabase</div></div>
-      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill gold">VIP 35–45m PICKUPS</span><div class="stat" style="font-size:22px;margin-top:4px">${vipB}</div><div class="muted">Hydraulic Ramp & Flatbed</div></div>
-      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill">ACTIVE BAY REPAIRS</span><div class="stat" style="font-size:22px;margin-top:4px">${inRepair}</div><div class="muted">Video Quotation Verified</div></div>
-      <div class="card" style="grid-column:span 3;padding:12px"><span class="pill green">LIVE SERVICE VERTICALS</span><div class="stat" style="font-size:22px;margin-top:4px">${activeVerts}</div><div class="muted">2W, 4W & Dynamic Verticals</div></div>
-    `;
-  }
 
   const approvedPartners = st.partners.filter(p => p.status === 'approved');
   const leadsBox = document.getElementById('admin-leads-list');
@@ -260,6 +243,30 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAdminDesk();
   document.getElementById('btn-admin-unlock').onclick = renderAdminDesk;
 
+  const mgrForm = document.getElementById('mgr-add-service-form');
+  if (mgrForm) {
+    mgrForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const st = loadState();
+      const newSrv = {
+        id: Date.now(),
+        domain: document.getElementById('ms-domain').value,
+        name: document.getElementById('ms-name').value.trim(),
+        price: Number(document.getElementById('ms-price').value) || 1499,
+        eta: document.getElementById('ms-desc').value.trim(),
+        description: document.getElementById('ms-desc').value.trim(),
+        available: true
+      };
+      st.customServices = st.customServices || [];
+      st.customServices.unshift(newSrv);
+      window.logDualGmailTelemetry(st, 'MARKETING_SERVICE_MGR', 'CROSS_ROLE_SERVICE_ADDED', newSrv.name, `Added ${newSrv.domain.toUpperCase()} service "${newSrv.name}" @ Rs.${newSrv.price}`);
+      saveState(st);
+      mgrForm.reset();
+      renderAdminDesk();
+    });
+  }
+
+
   document.getElementById('btn-save-promo').onclick = () => {
     const st = loadState();
     st.marketingBanner = document.getElementById('admin-promo-input').value.trim() || st.marketingBanner;
@@ -269,22 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('btn-admin-toggle-buffer').onclick = () => {
     const st = loadState();
-    if (st.masterKillSwitch) {
-      triggerSupremeOwnerLock('Cannot resume Live Feeds while Supreme Owner Master Kill-Switch is engaged');
-      return;
-    }
     st.secBufferActive = !st.secBufferActive;
     saveState(st);
     renderAdminDesk();
   };
-  const camConBtn = document.getElementById('btn-admin-connect-cam');
-  if (camConBtn) {
-    camConBtn.onclick = () => {
-      const br = document.getElementById('admin-cam-brand').value;
-      const cd = document.getElementById('admin-cam-code').value;
-      document.getElementById('admin-cam-status').innerHTML = '<span style="color:var(--green)">✅ Connected: ' + br + ' (' + cd + ') synced to active bay!</span>';
-    };
-  }
 
   document.getElementById('admin-leads-list').addEventListener('click', (e) => {
     const assignBtn = e.target.closest('[data-assign-lead]');
@@ -307,10 +302,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const st = loadState();
       const job = st.bookings.find(b => Number(b.id) === id);
       if (job) {
-        if (job.lockedByOwner || st.masterKillSwitch) {
-          triggerSupremeOwnerLock('Cannot turn ON Live Video / Tracking for ' + job.booking_code + ' — Locked by Supreme Owner (owner.html)');
-          return;
-        }
         job.camera_paused = !job.camera_paused;
         saveState(st);
         renderAdminDesk();
