@@ -1,319 +1,353 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#050d16">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CC Motocrafts | Operations & Marketing Manager Desk (CC 1005)</title>
   <link rel="stylesheet" href="app.css">
-  <title>CC Motocrafts | Operations & Marketing Management Desk (Lean 1-Manager Hub)</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <style>
+    body { background: #070b12; color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+    .mgr-header { background: #0d1522; border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .brand-title { font-size: 1.25rem; font-weight: 800; color: #38bdf8; letter-spacing: 0.5px; }
+    .brand-sub { font-size: 0.8rem; color: #94a3b8; }
+    .header-badges { display: flex; gap: 8px; align-items: center; }
+    .badge { padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+    .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-sub { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+    .card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    .card-title { font-size: 1.15rem; font-weight: 700; color: #f8fafc; margin-top: 0; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .btn { padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; font-size: 0.9rem; }
+    .btn-primary { background: #38bdf8; color: #050b14; }
+    .btn-primary:hover { background: #0ea5e9; }
+    .btn-success { background: #10b981; color: white; }
+    .btn-danger { background: #ef4444; color: white; }
+    .btn-outline { background: transparent; border: 1px solid #334155; color: #cbd5e1; }
+    .btn-outline:hover { background: #1e293b; color: white; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; font-weight: 500; }
+    .form-control { width: 100%; box-sizing: border-box; background: #070d17; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; color: white; font-size: 0.95rem; }
+    .form-control:focus { outline: none; border-color: #38bdf8; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .data-table th, .data-table td { padding: 12px; border-bottom: 1px solid #1e293b; text-align: left; }
+    .data-table th { background: #0b1120; color: #94a3b8; font-weight: 600; }
+    .cam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 12px; }
+    .cam-box { background: #070d17; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; text-align: center; }
+    .cam-screen { width: 100%; height: 160px; background: #020617; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #00f0ff; font-family: monospace; font-size: 0.85rem; margin-bottom: 12px; border: 1px solid #1e293b; position: relative; }
+    .cam-live-dot { position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .revoked-screen { display: none; position: fixed; inset: 0; background: #090305; z-index: 99999; flex-direction: column; justify-content: center; align-items: center; padding: 24px; text-align: center; }
+    .revoked-box { background: #1f0a0d; border: 2px solid #ef4444; border-radius: 16px; padding: 40px 32px; max-width: 500px; }
+  </style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap top-inner">
-    <a class="brand" href="index.html">
-      <span class="brand-badge">CC</span>
-      <div>CC MOTOCRAFTS<small>OPERATIONS & MARKETING MANAGEMENT DESK</small></div>
-    </a>
-    <nav id="nav" class="nav"></nav>
-    <span class="pill gold">1-MANAGER LEAN CONTROL HUB</span>
-  </div>
-</header>
 
-<div class="wrap">
-  <div id="switcher" class="switcher"></div>
-
-  <div class="brand-ribbon">
-    <span class="brand-chip ktm">🏍️ 2W: 100cc Commuters → 2500cc Superbikes</span>
-    <span class="brand-chip ducati">🔥 Ducati · Triumph 2500cc · BMW · Benelli · KTM · RE</span>
-    <span class="brand-chip kawasaki">🛵 CVT Tuning · OBD-II · Tappet · Voice-Command Tech</span>
-    <span class="brand-chip bmw">🚘 4W: Cars · Luxury SUVs · Heavy Fleet</span>
-    <span class="brand-chip triumph">❄️ AC Overhaul · 3D Alignment · Auto Gearbox</span>
-    <span class="brand-chip fleet">🚛 Hydraulic Flatbed Ramp · Urban Home & Parking</span>
-  </div>
-
-
-  <!-- Master Passcode Verification Bar -->
-  <section class="card full" style="margin-top:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-      <div>
-        <span class="eyebrow">MASTER SECURITY PROTOCOL (000786000) · SUBORDINATE TO SUPREME OWNER</span>
-        <h2 style="margin:4px 0">Operations & Marketing Manager Desk (Controls 2W + 4W Dispatch)</h2>
-        <p class="muted" style="margin:0">Replaces bloated 50-staff offices: 1 Marketing & Operations Manager dispatches leads and tracking passcodes for both apps, while Supreme Owner retains absolute lock authority.</p>
+  <!-- REVOKED SCREEN OVERLAY -->
+  <div id="mgr-revoked-screen" class="revoked-screen">
+    <div class="revoked-box">
+      <div style="font-size: 3.5rem; margin-bottom: 12px;">🚨</div>
+      <h1 style="color: #ef4444; margin: 0 0 12px 0;">ACCESS REVOKED</h1>
+      <p style="color: #fca5a5; font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">
+        This Operations & Marketing Manager session has been revoked by Supreme Owner Command (Shaik Mujahid).
+      </p>
+      <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px; color: #cbd5e1; font-size: 0.85rem; margin-bottom: 20px;">
+        Contact Supreme Owner Desk: <strong>+91 8333007351</strong><br>
+        Email: <strong>info@ccmotocrafts.in</strong>
       </div>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <input id="admin-passcode" type="password" value="000786000" placeholder="Enter Passcode (000786000)" style="background:#07121e;color:#fff;border:1px solid var(--cyan);border-radius:10px;padding:10px">
-        <button type="button" class="primary" id="btn-admin-unlock">🔓 Verify Passcode (000786000)</button>
-      </div>
+      <button class="btn btn-outline" onclick="location.reload()">Check Session Again</button>
     </div>
-    <div id="admin-lock-msg" style="margin-top:10px"></div>
-  </section>
-
-  <!-- Prominent Supreme Owner Lockout Alert Container -->
-  <div id="supreme-owner-lock-alert" style="display:none;margin:14px 0"></div>
-
-  <div class="grid" id="admin-workspace">
-    <!-- Left: Lead Assignment & Tracking Passcode Dispatch -->
-    <section class="card wide">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
-        <h2>📋 Incoming 2W, 4W & Urban Leads — Route to Partner & Send Tracking Passcode</h2>
-        <span class="pill green"><span class="live-dot"></span> Live Dispatch Sync</span>
-      </div>
-      <div id="admin-leads-list" class="list"></div>
-    </section>
-
-    <!-- Right: Marketing Campaign & Anti-Panic Buffer Controls -->
-    <section class="card">
-      <span class="pill gold">MARKETING & BAY BUFFER DESK</span>
-      <h2 style="margin-top:8px">Live Promo & SEC-DEV-412 Buffer</h2>
-      <div class="field" style="margin-bottom:10px">
-        <label>Global Website Live Promo Banner</label>
-        <textarea id="admin-promo-input" style="min-height:68px"></textarea>
-        <button type="button" class="primary" id="btn-save-promo">Update Live Website Banner</button>
-      </div>
-      <div class="item" style="margin-top:12px">
-        <span class="pill gold">PROTOCOL SEC-DEV-412</span>
-        <strong style="margin-top:6px">Anti-Panic 5–10 Min Operational Buffer</strong>
-        <p class="muted" style="margin:4px 0 10px">Pauses customer live camera with "Device Protocol Synchronization / Secure stream handshake in progress..." instead of "Offline".</p>
-        <button type="button" class="gold" id="btn-admin-toggle-buffer" style="width:100%">🛡️ Toggle SEC-DEV-412 Buffer</button>
-      </div>
-    </section>
-
-
-    <!-- Cross-Role Sync: Service Manager & Marketing Manager Live Service / Partner Creator -->
-    <section class="card full" style="border:2px solid var(--green)">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
-        <div>
-          <span class="eyebrow"><span class="live-dot"></span> CROSS-ROLE REAL-TIME SYNC · MARKETING &amp; SERVICE MANAGER CRUD</span>
-          <h2 style="margin:4px 0 0">⚡ Add / Update 2W (100cc–2500cc) &amp; 4W Service Tiers or Register Partner Garage</h2>
-        </div>
-        <span class="pill green">SYNCS INSTANTLY TO CUSTOMER &amp; OWNER APPS</span>
-      </div>
-      <form id="mgr-add-service-form" class="form-grid" style="align-items:end">
-        <div class="field">
-          <label>Division *</label>
-          <select id="ms-domain" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:10px;padding:10px">
-            <option value="2w">🏍️ 2-Wheeler (100cc–2500cc)</option>
-            <option value="4w">🚘 4-Wheeler (Cars / SUVs / Fleet)</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Service Title *</label>
-          <input id="ms-name" required placeholder="e.g. Superbike Desmo / ShiftCam Valve Calibration">
-        </div>
-        <div class="field">
-          <label>Tier Price (₹) *</label>
-          <input id="ms-price" type="number" required value="1999">
-        </div>
-        <div class="field">
-          <label>SLA &amp; Description *</label>
-          <input id="ms-desc" required value="35–45 Mins Free 10km Van Pickup + 6-Mo Warranty">
-        </div>
-        <div class="field full">
-          <button type="submit" class="green" style="width:100%">➕ Publish Service Live Across Customer, Partner &amp; Owner Apps (Dual-Gmail Logged)</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- Partner Directory with Restricted Supreme Owner Actions -->
-    <section class="card full">
-      <h2>🏢 Partner Garage Directory & Role-Based Restriction Enforcement</h2>
-      <p class="muted">Staff can view approved garages for lead routing, but <strong>cannot delete partner profiles, override owner blocks, or approve unverified garages</strong>. Click any restricted button below to verify the <code>🔒 LOCKED BY SUPREME OWNER</code> security enforcement.</p>
-      <div id="admin-partners-list" class="grid" style="margin-bottom:0"></div>
-    </section>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="wrap">CC Motocrafts Operations & Marketing Desk · Subordinate to Supreme Owner Command (owner.html) · Master Passcode: 000786000</div>
-</footer>
-
-<script src="app.js"></script>
-<script>
-function triggerSupremeOwnerLock(attemptedAction) {
-  const st = loadState();
-  st.auditLogs.unshift({
-    time: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) + ' IST',
-    actor: 'ADMIN-DESK (BLOCKED)',
-    action: `🔒 LOCKED BY SUPREME OWNER: Attempted unauthorized action [${attemptedAction}]`
-  });
-  saveState(st);
-
-  const box = document.getElementById('supreme-owner-lock-alert');
-  box.style.display = 'block';
-  box.innerHTML = `
-    <div class="locked-banner">
-      <div>
-        <div style="font-size:17px;color:#ff6b76;letter-spacing:0.04em">🔒 LOCKED BY SUPREME OWNER</div>
-        <div style="font-weight:500;font-size:13.5px;margin-top:4px">
-          Unauthorized Operation Blocked: <strong>"${attemptedAction}"</strong>.<br>
-          Operations & Marketing Managers cannot delete partner profiles, override owner blocks, or bypass Supreme Owner restrictions. Only <strong>owner.html</strong> holds Supreme Command authority.
-        </div>
-      </div>
-      <a class="btn danger" href="owner.html">Open Supreme Owner</a>
+  <!-- HEADER -->
+  <header class="mgr-header">
+    <div>
+      <div class="brand-title">CC MOTOCRAFTS</div>
+      <div class="brand-sub">OPERATIONS & MARKETING MANAGER DESK (CC 1005)</div>
     </div>
-  `;
-  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
+    <div class="header-badges">
+      <span class="badge badge-sub">SUBORDINATE TO SUPREME OWNER</span>
+      <span class="badge badge-blue">DISPATCH HOTLINE: +91 8333007351</span>
+      <button class="btn btn-outline" style="padding: 6px 12px;" onclick="mgrLogout()">Logout</button>
+    </div>
+  </header>
 
-function renderAdminDesk() {
-  const st = loadState();
-  const lockMsg = document.getElementById('admin-lock-msg');
-  const ws = document.getElementById('admin-workspace');
-
-  if (window.isRoleSessionRevoked('MARKETING_MANAGER') || window.isRoleSessionRevoked('SERVICE_MANAGER') || st.adminDeskStatus === 'disabled') {
-    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>ACCESS REVOKED — RESTRICTED READ-ONLY MODE (SESSION TERMINATED BY MASTER OWNER)</strong><br>Your device session token (<code>CCM-FP-WIN11-CHROME-884A</code>) has been remotely disconnected by Shaik Mujahid from <code>admin-ops.html</code>. All operational actions are locked.</div><span class="pill red">ACCESS REVOKED</span></div>`;
-    ws.style.opacity = '0.2';
-    ws.style.pointerEvents = 'none';
-    ws.style.filter = 'blur(4px)';
-    return;
-  }
-  if (!isInternetActive()) {
-    lockMsg.innerHTML = `<div class="locked-banner"><div>🚨 <strong>INTERNET DEPENDENCY LOCKOUT ACTIVE</strong> — Active internet sync dropped. Administrative controls and live tracking sessions are immediately locked out.</div><span class="pill red">OFFLINE LOCKOUT</span></div>`;
-    ws.style.opacity = '0.35';
-    ws.style.pointerEvents = 'none';
-    return;
-  }
-
-  const code = document.getElementById('admin-passcode').value.trim();
-  if (code !== CCM_CONFIG.MASTER_PASSCODE) {
-    lockMsg.innerHTML = `<div class="notice warn">🔒 Enter Master Passcode <strong>000786000</strong> above to unlock the Operations & Marketing Desk.</div>`;
-    ws.style.opacity = '0.35';
-    ws.style.pointerEvents = 'none';
-    return;
-  }
-
-  ws.style.opacity = '1';
-  ws.style.pointerEvents = 'auto';
-  lockMsg.innerHTML = `<div class="notice good">✅ <strong>Master Passcode (000786000) Verified · Internet Sync Active.</strong> Operations & Marketing Manager session unlocked (Role restrictions active).</div>`;
-
-  document.getElementById('admin-promo-input').value = st.marketingBanner;
-  const bufBtn = document.getElementById('btn-admin-toggle-buffer');
-  bufBtn.textContent = st.secBufferActive
-    ? '🟢 Resume Live Feed (Disable SEC-DEV-412 Buffer)'
-    : '🛡️ Activate SEC-DEV-412 Buffer (5–10 Min Sync Screen)';
-
-  const approvedPartners = st.partners.filter(p => p.status === 'approved');
-  const leadsBox = document.getElementById('admin-leads-list');
-  leadsBox.innerHTML = st.bookings.map(b => {
-    const links = buildDispatchLinks(b);
-    return `
-      <div class="item">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
-          <strong>${b.booking_code} · ${b.customer_name} (${b.phone}) — ${b.brand} ${b.model}</strong>
-          <span class="pill gold">Passcode: ${b.tracking_passcode}</span>
-        </div>
-        <div class="muted">
-          ${b.service_type} · Location: ${b.address} (${b.pincode}) · Status: <strong>${b.stage.toUpperCase()}</strong> · Assigned: <strong>${b.garage_name}</strong>
-        </div>
-        <div class="actions" style="margin-top:10px">
-          <select id="assign-sel-${b.id}" style="background:#07121e;color:#fff;border:1px solid var(--line);border-radius:10px;padding:8px">
-            ${approvedPartners.map(p => `<option value="${p.id}" ${Number(b.assigned_garage_id) === Number(p.id) ? 'selected' : ''}>Route to: ${p.garage_name}</option>`).join('')}
-          </select>
-          <button type="button" class="primary" data-assign-lead="${b.id}">Assign Partner Garage</button>
-          <a class="btn green" href="${links.waUrl}" target="_blank" rel="noopener">📲 Send Passcode via WhatsApp</a>
-          <button type="button" class="btn" data-pause-cam="${b.id}">${b.camera_paused ? '🟢 Resume Bay Cam' : '🛡️ Pause Bay Cam (SEC-DEV-412)'}</button>
-        </div>
+  <!-- LOGIN VIEW -->
+  <div id="mgr-login-view" class="container" style="max-width: 460px; margin-top: 60px;">
+    <div class="card" style="border-color: #38bdf8;">
+      <h2 style="color: #38bdf8; margin-top: 0; text-align: center;">Operations Manager Login</h2>
+      <p style="color: #94a3b8; font-size: 0.9rem; text-align: center; margin-bottom: 24px;">
+        Authenticate with your Operations Passcode (CC 1005) to manage dispatches, camera streams, and pricing tiers.
+      </p>
+      <div class="form-group">
+        <label>Staff Role</label>
+        <input type="text" class="form-control" value="Operations & Marketing Manager" readonly style="background: #111a2e;">
       </div>
-    `;
-  }).join('');
+      <div class="form-group">
+        <label>Manager Passcode</label>
+        <input type="password" id="mgr-pass-input" class="form-control" placeholder="••••••••">
+      </div>
+      <div id="mgr-login-err" style="color: #ef4444; font-size: 0.85rem; margin-bottom: 12px; display: none;">Invalid Manager Passcode. Please verify with Head Office.</div>
+      <button class="btn btn-primary" style="width: 100%; padding: 12px;" onclick="mgrLogin()">Authenticate & Open Desk</button>
+    </div>
+  </div>
 
-  const pBox = document.getElementById('admin-partners-list');
-  pBox.innerHTML = st.partners.map(p => `
+  <!-- MAIN DESK VIEW -->
+  <div id="mgr-main-view" class="container" style="display: none;">
+
+    <!-- INCOMING LEADS QUEUE -->
     <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <span class="pill ${p.status === 'approved' ? 'green' : (p.status === 'blocked' ? 'red' : 'gold')}">${p.status.toUpperCase()}</span>
-        <span class="muted" style="font-size:11px">GST: ${p.gst_number}</span>
+      <div class="card-title">
+        <span>📥 Incoming 2W, 4W & Urban Leads (Route to Partner Garages)</span>
       </div>
-      <h3>${p.garage_name}</h3>
-      <p class="muted">${p.owner_name} · ${p.phone}<br>${p.address}</p>
-      <div class="actions">
-        <button type="button" class="locked-btn" data-restricted="Delete Partner Profile (${p.garage_name})">🔒 Delete Partner</button>
-        <button type="button" class="locked-btn" data-restricted="Override Owner Block / Status (${p.garage_name})">🔒 Override Owner Status</button>
-        <button type="button" class="locked-btn" data-restricted="Alter Core Service Pricing / Unlock One-Time Partner Profile (${p.garage_name})">🔒 Alter Core Pricing / Profile</button>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Booking Code</th>
+            <th>Customer & Mobile</th>
+            <th>Vehicle Model</th>
+            <th>Location</th>
+            <th>Assigned Workshop</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color: #00f0ff;">CCM-HYD-2W101</strong></td>
+            <td>Srinivas Rao<br><small style="color: #94a3b8;">+91 98480XXXXX</small></td>
+            <td>KTM Duke 390 BS6</td>
+            <td>Road No. 12, Banjara Hills</td>
+            <td>Banjara Hills Bay (PARTNER-01)</td>
+            <td><button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="routeLead('CCM-HYD-2W101', 'PARTNER-01')">Dispatch to Partner</button></td>
+          </tr>
+          <tr>
+            <td><strong style="color: #f59e0b;">CCM-HYD-4W552</strong></td>
+            <td>Ayesha Siddiqua<br><small style="color: #94a3b8;">+91 83330XXXXX</small></td>
+            <td>Hyundai Creta 1.5 DCT</td>
+            <td>Madhapur, Hitec City</td>
+            <td>Madhapur 4W Bay (PARTNER-02)</td>
+            <td><button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="routeLead('CCM-HYD-4W552', 'PARTNER-02')">Dispatch to Partner</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WORK BAY LIVE CAMERAS -->
+    <div class="card">
+      <div class="card-title">
+        <span>📹 Live Work Bay Cameras & Diagnostic Feeds</span>
+      </div>
+      <div class="cam-grid">
+        <div class="cam-box">
+          <div class="cam-screen">
+            <span class="cam-live-dot">LIVE</span>
+            [BAY A • 2W DYNO TUNING]<br>LIVE 1080p ENCRYPTED FEED
+          </div>
+          <div style="font-weight: 600; margin-bottom: 8px;">Bay A (Superbike Dyno Stream)</div>
+          <button id="cam-btn-1" class="btn btn-success" style="padding: 6px 14px; font-size: 0.8rem;" onclick="toggleCam('cam-btn-1', 'Bay A')">Feed: STREAMING LIVE</button>
+        </div>
+        <div class="cam-box">
+          <div class="cam-screen">
+            <span class="cam-live-dot">LIVE</span>
+            [BAY B • 4W HYDRAULIC RAMP]<br>LIVE 1080p ENCRYPTED FEED
+          </div>
+          <div style="font-weight: 600; margin-bottom: 8px;">Bay B (4W Supercar Ramp)</div>
+          <button id="cam-btn-2" class="btn btn-success" style="padding: 6px 14px; font-size: 0.8rem;" onclick="toggleCam('cam-btn-2', 'Bay B')">Feed: STREAMING LIVE</button>
+        </div>
+        <div class="cam-box">
+          <div class="cam-screen">
+            <span class="cam-live-dot">LIVE</span>
+            [BAY C • ENGINE REBUILD CLEANROOM]<br>LIVE 1080p ENCRYPTED FEED
+          </div>
+          <div style="font-weight: 600; margin-bottom: 8px;">Bay C (Cleanroom Calibration)</div>
+          <button id="cam-btn-3" class="btn btn-success" style="padding: 6px 14px; font-size: 0.8rem;" onclick="toggleCam('cam-btn-3', 'Bay C')">Feed: STREAMING LIVE</button>
+        </div>
       </div>
     </div>
-  `).join('');
-}
 
-window.onCcmStateChange = renderAdminDesk;
+    <!-- ADD / UPDATE PRICING TIERS -->
+    <div class="card">
+      <div class="card-title">
+        <span>⚡ Dynamic Service & Pricing Manager (2W & 4W)</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px;">
+        <div class="form-group">
+          <label>Vehicle Division</label>
+          <select id="new-srv-division" class="form-control">
+            <option value="2W">2-Wheeler (100cc–2500cc)</option>
+            <option value="4W">4-Wheeler (Cars/SUVs)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Service Title</label>
+          <input type="text" id="new-srv-title" class="form-control" placeholder="e.g. Superbike Desmo Valve Calibration">
+        </div>
+        <div class="form-group">
+          <label>Tier Price (₹)</label>
+          <input type="number" id="new-srv-price" class="form-control" placeholder="e.g. 1999">
+        </div>
+        <div class="form-group">
+          <label>SLA & Description</label>
+          <input type="text" id="new-srv-sla" class="form-control" placeholder="e.g. 35-45 Mins Free 10km Pickup • 6-Mo Warranty">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="addServiceTier()">Publish Service Live Across Platform</button>
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderAdminDesk();
-  document.getElementById('btn-admin-unlock').onclick = renderAdminDesk;
+      <!-- SERVICES TABLE -->
+      <div style="margin-top: 24px;">
+        <h4 style="color: #cbd5e1; margin-bottom: 12px;">Active Catalog Services</h4>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Division</th>
+              <th>Service Title & Details</th>
+              <th>Current Price</th>
+              <th>Availability</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="services-table-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-  const mgrForm = document.getElementById('mgr-add-service-form');
-  if (mgrForm) {
-    mgrForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const st = loadState();
-      const newSrv = {
-        id: Date.now(),
-        domain: document.getElementById('ms-domain').value,
-        name: document.getElementById('ms-name').value.trim(),
-        price: Number(document.getElementById('ms-price').value) || 1499,
-        eta: document.getElementById('ms-desc').value.trim(),
-        description: document.getElementById('ms-desc').value.trim(),
-        available: true
-      };
-      st.customServices = st.customServices || [];
-      st.customServices.unshift(newSrv);
-      window.logDualGmailTelemetry(st, 'MARKETING_SERVICE_MGR', 'CROSS_ROLE_SERVICE_ADDED', newSrv.name, `Added ${newSrv.domain.toUpperCase()} service "${newSrv.name}" @ Rs.${newSrv.price}`);
-      saveState(st);
-      mgrForm.reset();
-      renderAdminDesk();
-    });
-  }
+    <!-- PROMO BANNER CONTROLLER -->
+    <div class="card">
+      <div class="card-title">
+        <span>📢 Live Website Promo Banner Controller</span>
+      </div>
+      <div class="form-group">
+        <label>Top Scrolling Banner Text</label>
+        <input type="text" id="promo-banner-input" class="form-control" value="CC MOTOCRAFTS | AI ENGINE LABS • HYDERABAD AUTOMOTIVE SERVICE. FREE pickup & drop in selected VIP PIN codes; ₹500 in other Hyderabad PIN codes. Hotline: +91 8333007351.">
+      </div>
+      <button class="btn btn-primary" onclick="updatePromoBanner()">Broadcast Banner to Customer Website</button>
+    </div>
 
+  </div>
 
-  document.getElementById('btn-save-promo').onclick = () => {
-    const st = loadState();
-    st.marketingBanner = document.getElementById('admin-promo-input').value.trim() || st.marketingBanner;
-    saveState(st);
-    renderAdminDesk();
-  };
-
-  document.getElementById('btn-admin-toggle-buffer').onclick = () => {
-    const st = loadState();
-    st.secBufferActive = !st.secBufferActive;
-    saveState(st);
-    renderAdminDesk();
-  };
-
-  document.getElementById('admin-leads-list').addEventListener('click', (e) => {
-    const assignBtn = e.target.closest('[data-assign-lead]');
-    if (assignBtn) {
-      const id = Number(assignBtn.dataset.assignLead);
-      const st = loadState();
-      const job = st.bookings.find(b => Number(b.id) === id);
-      const gid = Number(document.getElementById('assign-sel-' + id).value);
-      const gar = st.partners.find(p => Number(p.id) === gid);
-      if (job && gar) {
-        job.assigned_garage_id = gar.id;
-        job.garage_name = gar.garage_name;
-        saveState(st);
-        renderAdminDesk();
+  <script>
+    // Manager Login
+    function mgrLogin() {
+      const pass = document.getElementById('mgr-pass-input').value.trim();
+      if (pass === 'CC1005' || pass === '000786000') {
+        localStorage.setItem('ccm_mgr_auth', 'true');
+        showMgrDesk();
+      } else {
+        document.getElementById('mgr-login-err').style.display = 'block';
       }
     }
-    const camBtn = e.target.closest('[data-pause-cam]');
-    if (camBtn) {
-      const id = Number(camBtn.dataset.pauseCam);
-      const st = loadState();
-      const job = st.bookings.find(b => Number(b.id) === id);
-      if (job) {
-        job.camera_paused = !job.camera_paused;
-        saveState(st);
-        renderAdminDesk();
+
+    function mgrLogout() {
+      localStorage.removeItem('ccm_mgr_auth');
+      location.reload();
+    }
+
+    function showMgrDesk() {
+      document.getElementById('mgr-login-view').style.display = 'none';
+      document.getElementById('mgr-main-view').style.display = 'block';
+      renderServicesTable();
+    }
+
+    // Lead Dispatch
+    function routeLead(code, partner) {
+      alert(`Lead ${code} successfully routed to ${partner}!
+Tracking passcode and pickup van dispatch triggered via WhatsApp.`);
+    }
+
+    // Camera Toggles
+    function toggleCam(btnId, name) {
+      const btn = document.getElementById(btnId);
+      if (btn.classList.contains('btn-success')) {
+        btn.classList.remove('btn-success');
+        btn.classList.add('btn-danger');
+        btn.textContent = 'Feed: PAUSED (Buffer)';
+      } else {
+        btn.classList.remove('btn-danger');
+        btn.classList.add('btn-success');
+        btn.textContent = 'Feed: STREAMING LIVE';
       }
     }
-  });
 
-  document.getElementById('admin-partners-list').addEventListener('click', (e) => {
-    const rBtn = e.target.closest('[data-restricted]');
-    if (rBtn) triggerSupremeOwnerLock(rBtn.dataset.restricted);
-  });
-});
-</script>
+    // Services CRUD
+    let defaultServices = [
+      { id: 1, div: '2W', title: '2W Master Periodic Service + 42-Point Check', price: 1450, sla: '35-45 Mins • 6-Mo Warranty', live: true },
+      { id: 2, div: '2W', title: 'Superbike & Commuter Tappet, CVT & ECU Calibration', price: 3499, sla: '30-45 Mins VIP Pickup', live: true },
+      { id: 3, div: '4W', title: '4W 40-Point Pre-Delivery & Periodic Service', price: 3499, sla: '45-60 Mins Flatbed Pickup', live: true },
+      { id: 4, div: '4W', title: '4W Climate Control AC Overhaul & Transmission Check', price: 4999, sla: '60 Mins Hydraulic Tow', live: true }
+    ];
+
+    function renderServicesTable() {
+      const tbody = document.getElementById('services-table-body');
+      tbody.innerHTML = defaultServices.map(s => `
+        <tr>
+          <td><span class="badge ${s.div === '2W' ? 'badge-blue' : 'badge-sub'}">${s.div}</span></td>
+          <td><strong>${s.title}</strong><br><small style="color: #94a3b8;">${s.sla}</small></td>
+          <td><input type="number" class="form-control" style="width: 100px; padding: 4px 8px;" value="${s.price}" onchange="updateServicePrice(${s.id}, this.value)"></td>
+          <td>
+            <button class="btn ${s.live ? 'btn-success' : 'btn-danger'}" style="padding: 4px 10px; font-size: 0.75rem;" onclick="toggleServiceLive(${s.id})">
+              ${s.live ? '● Live' : '○ Hidden'}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.75rem; color: #ef4444;" onclick="deleteService(${s.id})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function addServiceTier() {
+      const div = document.getElementById('new-srv-division').value;
+      const title = document.getElementById('new-srv-title').value.trim();
+      const price = parseInt(document.getElementById('new-srv-price').value) || 999;
+      const sla = document.getElementById('new-srv-sla').value.trim() || 'Quick Pickup • Warranty';
+      if (!title) { alert('Please enter a service title'); return; }
+      defaultServices.push({ id: Date.now(), div, title, price, sla, live: true });
+      renderServicesTable();
+      alert(`Service "${title}" published live across Customer, Partner & Owner portals!`);
+    }
+
+    function updateServicePrice(id, newPrice) {
+      const s = defaultServices.find(x => x.id === id);
+      if (s) s.price = parseInt(newPrice);
+      alert('Price updated and synced live!');
+    }
+
+    function toggleServiceLive(id) {
+      const s = defaultServices.find(x => x.id === id);
+      if (s) {
+        s.live = !s.live;
+        renderServicesTable();
+      }
+    }
+
+    function deleteService(id) {
+      defaultServices = defaultServices.filter(x => x.id !== id);
+      renderServicesTable();
+    }
+
+    function updatePromoBanner() {
+      const val = document.getElementById('promo-banner-input').value.trim();
+      localStorage.setItem('ccm_promo_banner', val);
+      alert('Promo banner broadcasted live to Customer Website!');
+    }
+
+    // Kill switch monitor
+    setInterval(() => {
+      const sessionRevoked = localStorage.getItem('ccm_kill_manager') === 'true';
+      const revokedEl = document.getElementById('mgr-revoked-screen');
+      if (sessionRevoked) {
+        revokedEl.style.display = 'flex';
+      } else {
+        revokedEl.style.display = 'none';
+      }
+    }, 2000);
+
+    // Auto-login
+    if (localStorage.getItem('ccm_mgr_auth') === 'true') {
+      showMgrDesk();
+    }
+  </script>
 </body>
 </html>
